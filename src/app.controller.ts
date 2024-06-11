@@ -1,14 +1,16 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post,Body } from '@nestjs/common';
 import { UserService } from './services/user/UserServices';
 import { UserDomain } from './domain/user/user';
+import { UserDTO } from './domain/user/user_dto';
+import { UserSpecialization } from './domain/user/user_specialization';
 @Controller('user')
 export class AppController {
   constructor(private readonly appService: UserService) {}
 
-  @Get()
-  async getHello(): Promise<UserDomain[]> {
-    return await this.appService.findAll();
+  @Post()
+  async getHello(@Body() paging?:UserSpecialization): Promise<UserDTO[]> {
+    return await this.appService.findAll(paging);
   }
 }
