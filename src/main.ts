@@ -5,7 +5,7 @@ import { AppModule } from './app.module';
 import "reflect-metadata";
 async function bootstrap() {
   const app = await NestFactory.create(AppModule,{cors:true});
-  app.enableCors();
+  // app.enableCors();
   // const config = new DocumentBuilder()
   //   .setTitle('Operor API')
   //   .setDescription('API description')
