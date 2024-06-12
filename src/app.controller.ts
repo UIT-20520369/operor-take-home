@@ -5,12 +5,12 @@ import { UserService } from './services/user/UserServices';
 import { UserDomain } from './domain/user/user';
 import { UserDTO } from './domain/user/user_dto';
 import { UserSpecialization } from './domain/user/user_specialization';
-@Controller('user')
+@Controller()
 export class AppController {
   constructor(private readonly appService: UserService) {}
 
-  @Post()
-  async getHello(@Body() paging?:UserSpecialization): Promise<UserDTO[]> {
-    return await this.appService.findAll(paging);
+  @Get()
+  async getHello(): Promise<string> {
+    return 'hello world';
   }
 }
