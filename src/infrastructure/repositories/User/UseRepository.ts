@@ -15,7 +15,7 @@ export class UserRepository {
     constructor(private _userMapper: UserMapper, private _meetMapper: MeetingMapper, @Inject('DATA_SOURCE') private datasource: DataSource) {
     }
     async findAll(paging?: UserSpecialization): Promise<UserDomain[]> {
-        const entities = await this.datasource.getRepository(User).createQueryBuilder("user").leftJoinAndSelect("user.meetings", "meeting").getMany();
+        const entities = await this.datasource.getRepository(User).createQueryBuilder("user").leftJoinAndSelect("user.meetings", "meeting","meeting.user_id =user.id").limit(paging.limit).offset(paging.offset).orderBy("user.id","ASC").getMany();
         const domains = this._userMapper.toDomains(entities);
         return domains;
     }

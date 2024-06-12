@@ -12,7 +12,7 @@ export class UserController {
   constructor(private readonly appService: UserService) {}
 
   @Post()
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @ApiBody({type:UserSpecialization})
   async getHello(@Body() paging:UserSpecialization): Promise<UserDTO[]> {
     return await this.appService.findAll(paging);

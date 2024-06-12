@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Entity, PrimaryGeneratedColumn, Column ,ManyToOne} from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column ,ManyToOne,JoinColumn} from "typeorm"
 import { User } from "../User/User"
 @Entity()
 export class Meeting {
@@ -21,6 +21,7 @@ export class Meeting {
     created_at: Date
     
     @ManyToOne(()=>User,(user)=>user.meetings)
+    @JoinColumn({name:'user_id'})
     user:User
 
 }

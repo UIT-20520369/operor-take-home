@@ -3,7 +3,7 @@ import "reflect-metadata"
 import { DataSource } from "typeorm"
 import { User } from "../entity/User/User"
 import { Meeting } from "../entity/Meeting/Meeting"
-import { Initial1718045819823 } from "../../migration/1718045819823-Initial"
+import { Initial1718186534978 } from "../../migration/1718186534978-Initial"
 export const AppDataSource = new DataSource({
     type: "postgres",
     host: "aws-0-ap-southeast-1.pooler.supabase.com",
@@ -14,7 +14,7 @@ export const AppDataSource = new DataSource({
     synchronize: true,
     logging: false,
     entities: [User,Meeting],
-    migrations: [Initial1718045819823],
+    migrations: [Initial1718186534978],
     subscribers: [],
 })
 export const databaseProviders = [

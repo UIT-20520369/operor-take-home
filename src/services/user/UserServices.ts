@@ -13,6 +13,7 @@ export class UserService {
     }
     async findAll(paging?:UserSpecialization): Promise<UserDTO[]> {
         const result = await this.repository.findAll(paging);
+        // console.log({result})
         return this._userMapper.toDTOs(result);
     }
     async findByEmail(email:string):Promise<UserDTO>{
