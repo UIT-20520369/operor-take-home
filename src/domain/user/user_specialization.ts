@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 import { ApiProperty } from "@nestjs/swagger";
-export class UserSpecialization{
-    constructor(){
-        this.limit=10;
-        this.offset=0;
+export class UserSpecialization {
+    constructor() {
+        this.limit = 10;
+        this.offset = 0;
     }
     @ApiProperty()
-    offset:number;
+    offset: number;
     @ApiProperty()
-    limit:number;
+    limit: number;
 }

@@ -1,8 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Controller, Get, Post,Body,UseGuards } from '@nestjs/common';
+import { Controller, Post,Body,UseGuards } from '@nestjs/common';
 import { UserService } from '../services/user/UserServices';
-import { UserDomain } from '../domain/user/user';
 import { UserDTO } from '../domain/user/user_dto';
 import { UserSpecialization } from '../domain/user/user_specialization';
 import { AuthGuard } from '../services/auth/AuthGuard';

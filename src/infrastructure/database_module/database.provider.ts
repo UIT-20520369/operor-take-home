@@ -13,7 +13,7 @@ export const AppDataSource = new DataSource({
     database: "postgres",
     synchronize: true,
     logging: false,
-    entities: [User,Meeting],
+    entities: [User, Meeting],
     migrations: [Initial1718186534978],
     subscribers: [],
 })
